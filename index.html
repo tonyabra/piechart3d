@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html></html>
+	<head>
+		<meta charset="utf-8">
+		<title>true 3D pie charts</title>
+		<style>
+			/* Background Pattern from: https://www.magicpattern.design/tools/css-backgrounds */		
+			html { font-family: sans-serif; background-color: #fff; background-image:  linear-gradient(#d4d4d4 1px, transparent 1.3px), linear-gradient(to right, #d4d4d4 1px, #fff 1.3px); background-size: 64px 21px; }
+			#chartForm { border: 1px solid gray; background-color: white;  width: 450px; margin-bottom: 40px;}
+			#formWrapper { list-style-type: none;}
+			.formRow {display: flex; justify-content: flex-end; padding-bottom: 10px; padding-right: 30px;}
+			.formRow > label {flex: 1}
+			.formRow > input {flex: 4}
+			.formRow > textarea {flex: 4; height: 110px;}
+			#chartBox { border: 1px solid gray; width: 850px; background-color: white;}
+			#chartTitle { font-size: 25px; width: 100%; text-align: center; margin: 20px 0 0 0; padding-bottom: 0px;}
+			#chartRow { display: flex; align-items: center;}
+			.keyPair { display: flex; align-items: center; margin-bottom: px;}
+			.colorSwatch { width: 10px; height: 10px; margin-right: 8px;}
+		</style>
+	</head>
+	<body>
+		<form id="chartForm" onsubmit="return updateChart(event);">
+			<ul id="formWrapper">
+				<li class="formRow">
+					<label for="title">title:</label>
+					<input type="text" name="title" id="title" value="How I Spent My Weekend">
+				</li>
+				<li class="formRow">
+					<label for="data">data:</label>
+					<textarea name="data" id="data">Building this chart, 20
+Regretting it, 14
+Wondering why, 19
+"Is this my life?", 12
+Staring blankly, 8
+					</textarea>
+				</li>
+				<li class="formRow">
+					<input type="submit" value="generate">
+				</li>
+			</ul>
+
+		</form>
+		<div id="chartBox">
+			<h1 id="chartTitle"></h1>
+			<div id="chartRow">
+				<div id="chartKey"></div>
+			</div>
+		</div>
+		<script src="./bundle.js"></script>
+	</body>
+</html>
